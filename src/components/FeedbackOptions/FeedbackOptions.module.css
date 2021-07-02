@@ -1,0 +1,28 @@
+.buttons {
+  margin-bottom: 20px;
+}
+
+.button {
+  padding: 5px 10px;
+  font-weight: 500;
+  font-size: 16px;
+  border: transparent;
+  border-radius: 4px;
+  background-color: #2d4059;
+  color: #eeeeee;
+  cursor: pointer;
+}
+
+.button:not(:last-child) {
+  margin-right: 8px;
+}
+
+.button::first-letter {
+  text-transform: capitalize;
+}
+
+.button:hover {
+  background-color: #ff5722;
+  color: #222831;
+  transition: all 300ms ease-in-out;
+}
