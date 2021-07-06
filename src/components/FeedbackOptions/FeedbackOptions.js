@@ -5,14 +5,16 @@ import s from './FeedbackOptions.module.css';
 class FeedbackOptions extends Component {
   render() {
     const { options, onLeaveFeedback } = this.props;
+    const optionsArr = Object.keys(options);
+
     return (
       <div className={s.buttons}>
-        {options.map(option => (
+        {optionsArr.map(option => (
           <button
             key={option}
             type="button"
             className={s.button}
-            onClick={onLeaveFeedback}
+            onClick={() => onLeaveFeedback(option)}
           >
             {option}
           </button>
@@ -25,6 +27,6 @@ class FeedbackOptions extends Component {
 export default FeedbackOptions;
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  options: PropTypes.objectOf(PropTypes.number.isRequired).isRequired,
   onLeaveFeedback: PropTypes.func.isRequired,
 };
